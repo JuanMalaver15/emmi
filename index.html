@@ -18,6 +18,16 @@
                     <li><a href="#productos" class="nav-link">Productos</a></li>
                     <li><a href="#about" class="nav-link">Nosotros</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-link cart-icon">
+                        <div class="cart-container" onclick="openCart()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1"/>
+                                <circle cx="19" cy="21" r="1"/>
+                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                            </svg>
+                            <div class="cart-count" id="cartBadge">0</div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <button class="menu-toggle">☰</button>
@@ -39,20 +49,20 @@
         <div class="container">
             <h2 class="section-title fade-in">Productos Destacados</h2>
             <div class="productos-grid">
-                <div class="producto-card fade-in">
-                    <div class="producto-img"> <img src="img/camisahombre.webp" alt=""></div>
-                    <div class="producto-info">
-                        <h3>Camiseta Premium</h3>
-                        <div class="producto-precio">$45.000</div>
-                        <button class="buy-button">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="producto-card fade-in">
+        <div class="producto-card fade-in" data-id="1" data-name="Camiseta Premium" data-price="45000" data-image="img/camisahombre.webp">
+          <div class="producto-img"><img src="img/camisahombre.webp" alt=""></div>
+          <div class="producto-info">
+            <h3>Camiseta Premium</h3>
+            <div class="producto-precio">$45.000</div>
+            <button class="buy-button" onclick="addToCart(this)">Agregar al Carrito</button>
+          </div>
+        </div>
+                <div class="producto-card fade-in" data-id="2" data-name="Jeans Modernos" data-price="89000" data-image="img/jeans.webp">
                     <div class="producto-img"> <img src="img/jeans.webp" alt=""></div>
                     <div class="producto-info">
                         <h3>Jeans Modernos</h3>
                         <div class="producto-precio">$89.000</div>
-                        <button class="buy-button">Agregar al Carrito</button>
+                        <button class="buy-button" onclick="addToCart(this)">Agregar al Carrito</button>
                     </div>
                 </div>
                 <div class="producto-card fade-in">
@@ -169,6 +179,31 @@ MEDELLIN - ANTIOQUIA </p>
         </div>
     </footer>
 
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Mi Carrito</h2>
+                <button class="close-cart" onclick="closeCart()">✕</button>
+            </div>
+            <div class="cart-body" id="cartBody">
+                <div class="cart-empty" id="cartEmpty">
+                    <p>Tu carrito está vacío</p>
+                    <p>¡Agrega algunos productos increíbles!</p>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <span class="total-text">Total: </span>
+                    <span class="total-amount" id="totalAmount">$0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="/functions/main.js"></script>
     <script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
