@@ -81,3 +81,18 @@ let cart = [];
     function closeCart() {
       document.getElementById('cartModal').classList.remove('active');
     }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+      alert('Gracias por su compra. Total: ' + document.getElementById('totalAmount').textContent);
+      cart = [];
+      cartCount = 0;
+      updateCartDisplay();
+      closeCart();
+    }
+
+    // Initial display update
+    updateCartDisplay();
