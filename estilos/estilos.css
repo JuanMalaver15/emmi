@@ -762,6 +762,49 @@
       background: #218838;
   }
 
+  /*Tallas*/
+  /* Contenedor de tallas */
+.tallas {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botones de talla */
+.talla {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.talla:hover {
+    border-color: #333;
+    background: #f5f5f5;
+}
+
+/* Talla seleccionada */
+.talla.seleccionada {
+    border-color: #e63946;
+    background: #e63946;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Talla no disponible */
+.talla.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+
 
   /* Footer */
   .footer {
