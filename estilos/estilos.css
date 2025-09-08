@@ -98,21 +98,6 @@
             cursor: pointer;
             color: var(--primary-red);
         }
-        .emmi {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.emmi::first-letter {
-  background: #fff;      /* Fondo blanco */
-  color: #ff0000;           /* Color de la letra */
-  padding: 0.05em 0.4em;  /* Espaciado dentro del fondo */
-  border-radius: 20px;    /* Bordes redondeados opcional */
-  margin-right: 0.2em;   /* Espacio con el resto del texto */
-  display: inline-block; /* Necesario para aplicar padding y fondo */
-}
-
 
         /* Hero Section */
         .hero {
