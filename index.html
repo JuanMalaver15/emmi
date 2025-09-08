@@ -7,6 +7,9 @@
     <title>EEMI - CLOTHING COMPANY</title>
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="icon" type="image/png" href="img/logo.png">
+    <!-- Librería de EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -143,6 +146,10 @@
                         <label for="email">Correo Electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
+                                        <div class="form-group">
+                        <label for="tel">Numero de teléfono</label>
+                        <input type="number" id="tel" name="tel" required>
+                    </div>
                     <div class="form-group">
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
@@ -244,6 +251,7 @@
         </div>
     </div>
     <script src="functions/main.js"></script>
+    <script src="functions/email.js"></script>
     <script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
@@ -308,6 +316,9 @@
             observer.observe(el);
         });
 
+        
+        /*
+
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
@@ -342,7 +353,7 @@
                 }, 1500);
             }
         });
-
+*/
         // Add to cart functionality
         document.querySelectorAll('.buy-button').forEach(button => {
             if (!button.form) { // Only for product buttons, not form submit
