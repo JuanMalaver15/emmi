@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="icon" type="image/png" href="img/logo.png">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -20,10 +22,13 @@
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                     <li class="nav-link cart-icon">
                         <div class="cart-container" onclick="openCart()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart">
-                                <circle cx="8" cy="21" r="1"/>
-                                <circle cx="19" cy="21" r="1"/>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                             </svg>
                             <div class="cart-count" id="cartBadge">0</div>
                         </div>
@@ -39,7 +44,8 @@
         <div class="hero-content">
             <h1 class="emmi">EMMI</h1>
             <h1>Moda que Define tu Estilo</h1>
-            <p>Descubre las últimas tendencias en ropa moderna y elegante. Calidad premium para personas que buscan destacar.</p>
+            <p>Descubre las últimas tendencias en ropa moderna y elegante. Calidad premium para personas que buscan
+                destacar.</p>
             <a href="#productos" class="cta-button">Comprar Ahora</a>
         </div>
     </section>
@@ -49,15 +55,17 @@
         <div class="container">
             <h2 class="section-title fade-in">Productos Destacados</h2>
             <div class="productos-grid">
-        <div class="producto-card fade-in" data-id="1" data-name="Camiseta Premium" data-price="45000" data-image="img/camisahombre.webp">
-          <div class="producto-img"><img src="img/camisahombre.webp" alt=""></div>
-          <div class="producto-info">
-            <h3>Camiseta Premium</h3>
-            <div class="producto-precio">$45.000</div>
-            <button class="buy-button" onclick="addToCart(this)">Agregar al Carrito</button>
-          </div>
-        </div>
-                <div class="producto-card fade-in" data-id="2" data-name="Jeans Modernos" data-price="89000" data-image="img/jeans.webp">
+                <div class="producto-card fade-in" data-id="1" data-name="Camiseta Premium" data-price="45000"
+                    data-image="img/camisahombre.webp">
+                    <div class="producto-img"><img src="img/camisahombre.webp" alt=""></div>
+                    <div class="producto-info">
+                        <h3>Camiseta Premium</h3>
+                        <div class="producto-precio">$45.000</div>
+                        <button class="buy-button" onclick="addToCart(this)">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <div class="producto-card fade-in" data-id="2" data-name="Jeans Modernos" data-price="89000"
+                    data-image="img/jeans.webp">
                     <div class="producto-img"> <img src="img/jeans.webp" alt=""></div>
                     <div class="producto-info">
                         <h3>Jeans Modernos</h3>
@@ -81,7 +89,7 @@
                         <button class="buy-button">Agregar al Carrito</button>
                     </div>
                 </div>
-                                <div class="producto-card fade-in">
+                <div class="producto-card fade-in">
                     <div class="producto-img"></div>
                     <div class="producto-info">
                         <h3>Vestido Casual</h3>
@@ -89,7 +97,7 @@
                         <button class="buy-button">Agregar al Carrito</button>
                     </div>
                 </div>
-                                <div class="producto-card fade-in">
+                <div class="producto-card fade-in">
                     <div class="producto-img"></div>
                     <div class="producto-info">
                         <h3>Vestido Casual</h3>
@@ -99,9 +107,9 @@
                 </div>
             </div>
         </div>
-                <button class="catalogo-button" onclick="window.open('docs/catalogo.pdf', '_blank')">
-  Ver catálogo completo
-</button>
+        <button class="catalogo-button" onclick="window.open('docs/catalogo.pdf', '_blank')">
+            Ver catálogo completo
+        </button>
     </section>
 
     <!-- About Section -->
@@ -111,8 +119,10 @@
             <div class="about-content">
                 <div class="about-text fade-in">
                     <h2>Pasión por la Moda</h2>
-                    <p>En EEMI, creemos que la moda es una forma de expresión personal. Desde 2020, nos hemos dedicado a ofrecer prendas de alta calidad que combinen estilo, comodidad y las últimas tendencias.</p>
-                    <p>Nuestro equipo de diseñadores trabaja incansablemente para crear colecciones que reflejen la personalidad única de cada cliente, siempre manteniendo los más altos estándares de calidad.</p>
+                    <p>En EEMI, creemos que la moda es una forma de expresión personal. Desde 2020, nos hemos dedicado a
+                        ofrecer prendas de alta calidad que combinen estilo, comodidad y las últimas tendencias.</p>
+                    <p>Nuestro equipo de diseñadores trabaja incansablemente para crear colecciones que reflejen la
+                        personalidad única de cada cliente, siempre manteniendo los más altos estándares de calidad.</p>
                 </div>
                 <div class="about-img fade-in"></div>
             </div>
@@ -141,30 +151,60 @@
                 </form>
                 <div class="contact-info fade-in">
                     <h3>¡Conecta con Nosotros!</h3>
-                    <p>¿Tienes preguntas sobre nuestros productos? ¿Necesitas ayuda con tu pedido? No dudes en contactarnos.</p>
+                    <p>¿Tienes preguntas sobre nuestros productos? ¿Necesitas ayuda con tu pedido? No dudes en
+                        contactarnos.</p>
                     <p><strong>Teléfono:</strong> +57 320 5862135</p>
                     <a href=""></a>
                     <p><strong>Email:</strong> emifitempresarial@gmail.com</p>
                     <p><strong>Dirección: </strong>CRA 53 # 49 - 47 LOCALES 108 Y 111 C.C SHANGAI
-MEDELLIN - ANTIOQUIA </p>
-                    
+                        MEDELLIN - ANTIOQUIA </p>
+
                     <div class="social-links">
                         <a href="https://wa.me/573205862135?text=Hola%20EMMI,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20Muchas%20gracias.%20🙌
 " class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-heart-icon lucide-message-circle-heart"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z"/></svg>
-                        </a>
-                                                                        <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-house-icon lucide-map-pin-house"><path d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"/><path d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2"/><path d="M18 22v-3"/><circle cx="10" cy="10" r="3"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-message-circle-heart-icon lucide-message-circle-heart">
+                                <path
+                                    d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+                                <path
+                                    d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z" />
+                            </svg>
                         </a>
                         <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-map-pin-house-icon lucide-map-pin-house">
+                                <path
+                                    d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z" />
+                                <path d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2" />
+                                <path d="M18 22v-3" />
+                                <circle cx="10" cy="10" r="3" />
+                            </svg>
                         </a>
                         <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
                         </a>
                     </div>
                     <div class="mapa">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4049.439223825395!2d-75.57333758045208!3d6.250150556414697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ff12b0f35b%3A0xa64c65fb2adf4248!2sCentro%20Comercial%20Shangai!5e0!3m2!1ses!2sco!4v1757353448645!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4049.439223825395!2d-75.57333758045208!3d6.250150556414697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ff12b0f35b%3A0xa64c65fb2adf4248!2sCentro%20Comercial%20Shangai!5e0!3m2!1ses!2sco!4v1757353448645!5m2!1ses!2sco"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -203,7 +243,7 @@ MEDELLIN - ANTIOQUIA </p>
             </div>
         </div>
     </div>
-<script src="functions/main.js"></script>
+    <script src="functions/main.js"></script>
     <script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
@@ -228,7 +268,7 @@ MEDELLIN - ANTIOQUIA </p>
                 if (target) {
                     const headerHeight = document.querySelector('.header').offsetHeight;
                     const targetPosition = target.offsetTop - headerHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -269,31 +309,31 @@ MEDELLIN - ANTIOQUIA </p>
         });
 
         // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const nombre = formData.get('nombre');
             const email = formData.get('email');
             const mensaje = formData.get('mensaje');
-            
+
             // Simple validation
             if (nombre && email && mensaje) {
                 // Simulate form submission
                 const button = this.querySelector('.buy-button');
                 const originalText = button.textContent;
-                
+
                 button.textContent = 'Enviando...';
                 button.disabled = true;
-                
+
                 setTimeout(() => {
                     button.textContent = '¡Mensaje Enviado! ✓';
                     button.style.background = '#10b981';
-                    
+
                     // Reset form
                     this.reset();
-                    
+
                     setTimeout(() => {
                         button.textContent = originalText;
                         button.disabled = false;
@@ -306,12 +346,12 @@ MEDELLIN - ANTIOQUIA </p>
         // Add to cart functionality
         document.querySelectorAll('.buy-button').forEach(button => {
             if (!button.form) { // Only for product buttons, not form submit
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const originalText = this.textContent;
-                    
+
                     this.textContent = '¡Agregado! ✓';
                     this.style.background = '#10b981';
-                    
+
                     setTimeout(() => {
                         this.textContent = originalText;
                         this.style.background = '';
@@ -325,7 +365,7 @@ MEDELLIN - ANTIOQUIA </p>
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             const rate = scrolled * -0.5;
-            
+
             if (hero) {
                 hero.style.transform = `translateY(${rate}px)`;
             }
@@ -335,7 +375,7 @@ MEDELLIN - ANTIOQUIA </p>
         window.addEventListener('load', () => {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
-            
+
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
