@@ -73,9 +73,10 @@
         <div class="container">
             <h2 class="section-title fade-in">Productos Destacados</h2>
             <div class="productos-grid"> <!--Productos 1-->
+                <!--Producto 1-->
                 <div class="producto-card fade-in" data-id="1" data-name="Camiseta Premium" data-price="45000"
-                    data-image="img/camisahombre.webp">
-                    <div class="producto-img"><img src="img/camisahombre.webp" alt=""></div>
+                    data-image="img/Chompa.jpeg" data-images="img/Chompa.png,img/Chompa1.png,img/Chompa2.png">
+                    <div class="producto-img"><img src="img/Chompa.png" alt=""></div>
                     <div class="producto-info">
                         <h3>Camiseta Premium</h3> <span>Camiseta hecha en colombia</span>
                         <div class="tallas">
@@ -88,8 +89,9 @@
                             onclick="addToCart(this)">Agregar al Carrito</button>
                     </div>
                 </div>
+                <!--Producto 2-->
                 <div class="producto-card fade-in" data-id="2" data-name="Jeans Modernos" data-price="89000"
-                    data-image="img/jeans.webp">
+                    data-image="img/jeans.webp" data-images="img/jeans.webp,img/jeans2.webp,img/jeans3.webp">
                     <div class="producto-img"> <img src="img/jeans.webp" alt=""></div>
                     <div class="producto-info">
                         <h3>Jeans Modernos</h3> <span>Jeans hechos en colombia</span>
@@ -147,7 +149,17 @@
             completo </button>
     </section>
 
-
+    <!-- Modal Preview -->
+    <div id="previewModal" class="preview-modal">
+        <span class="close-preview">&times;</span>
+        <div class="preview-content">
+            <div class="slides-container" id="slidesContainer">
+                <!-- Las imágenes se llenarán dinámicamente -->
+            </div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about">

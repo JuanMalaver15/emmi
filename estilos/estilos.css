@@ -392,6 +392,7 @@
   }
 
   .about-img {
+      cursor: pointer;
       width: 100%;
       height: 400px;
       background: linear-gradient(135deg, var(--light-red), var(--primary-red));
@@ -410,6 +411,81 @@
       content: '✨';
       animation: pulse 2s ease-in-out infinite;
   }
+
+  /* Modal general */
+  .preview-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  /* Botón cerrar */
+  .close-preview {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  /* Contenedor de slides */
+  .preview-content {
+      position: relative;
+      margin: auto;
+      max-width: 80%;
+      max-height: 80%;
+  }
+
+  .slides-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      overflow: hidden;
+  }
+
+  .slides-container img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+  }
+
+  /* Botones de navegación */
+  .prev,
+  .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: white;
+      font-size: 24px;
+      transition: 0.3s;
+      user-select: none;
+  }
+
+  .prev {
+      left: 0;
+  }
+
+  .next {
+      right: 0;
+  }
+
+  .prev:hover,
+  .next:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+  }
+
 
   /* Contact Section */
   .contact {
@@ -764,45 +840,45 @@
 
   /*Tallas*/
   /* Contenedor de tallas */
-.tallas {
-    margin-top: 12px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+  .tallas {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+  }
 
-/* Botones de talla */
-.talla {
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: #fff;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
+  /* Botones de talla */
+  .talla {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+  }
 
-/* Hover */
-.talla:hover {
-    border-color: #333;
-    background: #f5f5f5;
-}
+  /* Hover */
+  .talla:hover {
+      border-color: #333;
+      background: #f5f5f5;
+  }
 
-/* Talla seleccionada */
-.talla.seleccionada {
-    border-color: #e63946;
-    background: #e63946;
-    color: #fff;
-    font-weight: bold;
-}
+  /* Talla seleccionada */
+  .talla.seleccionada {
+      border-color: #e63946;
+      background: #e63946;
+      color: #fff;
+      font-weight: bold;
+  }
 
-/* Talla no disponible */
-.talla.disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    text-decoration: line-through;
-}
+  /* Talla no disponible */
+  .talla.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      text-decoration: line-through;
+  }
 
 
 
