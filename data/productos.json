@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Premium",
+    "description": "Camiseta hecha en Colombia",
+    "price": 45000,
+    "image": "img/camisahombre.webp",
+    "tallas": ["S", "M", "L", "XL"],
+    "disabled": ["XL"]
+  },
+  {
+    "id": 2,
+    "name": "Jeans Modernos",
+    "description": "Jeans hechos en Colombia",
+    "price": 89000,
+    "image": "img/jeans.webp",
+    "tallas": ["S", "M", "L", "XL"],
+    "disabled": ["XL"]
+  },
+  {
+    "id": 3,
+    "name": "Chaqueta Elegante",
+    "description": "Chaqueta elegante",
+    "price": 125000,
+    "image": "img/chaqueta.webp",
+    "tallas": ["S", "M", "L", "XL"],
+    "disabled": ["XL"]
+  },
+  {
+    "id": 4,
+    "name": "Vestido Casual",
+    "description": "Vestido cómodo y fresco",
+    "price": 78000,
+    "image": "img/vestido.webp",
+    "tallas": ["S", "M", "L"],
+    "disabled": []
+  }
+]
