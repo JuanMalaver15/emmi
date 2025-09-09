@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto</title>
+<link rel="stylesheet" href="estilos/estilosproducto.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+      <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">EEMI®</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="https://juanmalaver15.github.io/emmi/" class="nav-link">Inicio</a></li>
+                    <li><a href="https://juanmalaver15.github.io/emmi/" class="nav-link">Productos</a></li>
+                    <li><a href="https://juanmalaver15.github.io/emmi/" class="nav-link">Nosotros</a></li>
+                    <li><a href="https://juanmalaver15.github.io/emmi/" class="nav-link">Contacto</a></li>
+                    <li class="nav-link cart-icon">
+                        <div class="cart-container" onclick="openCart()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                            <div class="cart-count" id="cartBadge">0</div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+  <div class="producto-detalle">
+    <div id="producto-imagenes"></div>
+    <div id="producto-info"></div>
+  </div>
+
+  <script src="functions/detalle.js"></script>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 EEMI. Todos los derechos reservados. | Diseñado con ❤️ en Colombia</p>
+            <a href="https://weboriginnexustech.vercel.app/" target="_blank">Desarrollado por NexusTech</a>
+        </div>
+    </footer>
+    
+</body>
+</html>

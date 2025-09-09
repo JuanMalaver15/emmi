@@ -1,0 +1,123 @@
+
+
+/* Contenedor principal */
+.producto-detalle {
+    margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ====== Imagen ====== */
+#producto-imagenes {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-principal {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagen-principal:hover {
+  transform: scale(1.05);
+}
+
+/* ====== Información ====== */
+#producto-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#producto-info h2 {
+  font-size: 2rem;
+  color: #c70000;
+  margin-bottom: 0.5rem;
+}
+
+#producto-info p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0.3rem 0;
+}
+
+#producto-info strong {
+  color: #c70000;
+}
+
+/* ====== Selectores ====== */
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #222;
+  display: block;
+}
+
+select, 
+input[type="number"] {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #c70000;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, 
+input[type="number"]:focus {
+  border-color: #a00000;
+}
+
+/* ====== Botón WhatsApp ====== */
+button {
+  margin-top: 1rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #25d366;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(199,0,0,0.3);
+}
+
+button:hover {
+  background: #079d3e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(199,0,0,0.4);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .producto-detalle {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #producto-info {
+    align-items: center;
+  }
+
+  select, input[type="number"] {
+    max-width: 100%;
+  }
+}

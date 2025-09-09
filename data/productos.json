@@ -4,7 +4,6 @@
     "name": "Camiseta Premium",
     "price": 45000,
     "image": "img/Chompa.png",
-    "images": ["img/Chompa.png", "img/Chompa1.png", "img/Chompa2.png"],
     "description": "Camiseta hecha en colombia",
     "tallas": ["S", "M", "L", "XL"],
     "disabled": ["XL"],
@@ -17,8 +16,7 @@
     "price": 89000,
     "image": "img/jeans.webp",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"],
-    "seleccionada": "M"
+    "disabled": ["XL"]
   },
   {
     "id": 3,

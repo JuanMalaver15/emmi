@@ -31,12 +31,17 @@ async function cargarProductos() {
         <div class="producto-img">
           <img src="${prod.image}" alt="${prod.name}">
         </div>
+               <a href="producto.html?id=${prod.id}" class="view-button" title="Ver detalles" style="position: absolute; top: 10px; right: 10px; background: white; border-radius: 5px; padding: 4px 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b62518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </a>
         <div class="producto-info">
           <h3>${prod.name}</h3>
           <span>${prod.description}</span>
           <div class="tallas">${tallasHTML}</div>
           <div class="producto-precio">${precioFormateado}</div>
-          <button class="buy-button">Agregar al Carrito</button>
+          <div class="producto-acciones">
+            <button class="buy-button">Agregar al Carrito</button>
+          </div>
         </div>
       `;
 
