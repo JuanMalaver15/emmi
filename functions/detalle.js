@@ -46,7 +46,7 @@ function comprarPorWhatsapp(id) {
   const cantidad = document.getElementById("cantidad").value;
 
   const mensaje = `Hola, quiero comprar el producto ${id} en talla ${talla} (Cantidad: ${cantidad})`;
-  const url = `https://wa.me/573000000000?text=${encodeURIComponent(mensaje)}`;
+  const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
 
   window.open(url, "_blank");
 }
