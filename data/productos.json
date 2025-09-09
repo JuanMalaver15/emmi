@@ -2,11 +2,13 @@
   {
     "id": 1,
     "name": "Camiseta Premium",
-    "description": "Camiseta hecha en Colombia",
     "price": 45000,
-    "image": "img/camisahombre.webp",
+    "image": "img/Chompa.png",
+    "images": ["img/Chompa.png", "img/Chompa1.png", "img/Chompa2.png"],
+    "description": "Camiseta hecha en colombia",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"]
+    "disabled": ["XL"],
+    "seleccionada": "L"
   },
   {
     "id": 2,
@@ -15,7 +17,8 @@
     "price": 89000,
     "image": "img/jeans.webp",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"]
+    "disabled": ["XL"],
+    "seleccionada": "M"
   },
   {
     "id": 3,
@@ -28,6 +31,15 @@
   },
   {
     "id": 4,
+    "name": "Vestido Casual",
+    "description": "Vestido cómodo y fresco",
+    "price": 78000,
+    "image": "img/vestido.webp",
+    "tallas": ["S", "M", "L"],
+    "disabled": []
+  },
+  {
+    "id": 5,
     "name": "Vestido Casual",
     "description": "Vestido cómodo y fresco",
     "price": 78000,

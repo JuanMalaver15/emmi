@@ -677,12 +677,11 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: 5px;
-      border-radius: 50%;
       transition: background 0.3s ease;
   }
 
   .close-cart:hover {
-      background: rgba(255, 255, 255, 0.2);
+      color: #000000;
   }
 
   .cart-body {
@@ -791,6 +790,38 @@
       font-size: 0.8rem;
       transition: background 0.3s ease;
   }
+
+  .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px 0;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .cart-item-info {
+      flex-grow: 1;
+      margin-left: 10px;
+  }
+
+  .btn-add {
+      margin-left: 8px;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 3px 7px;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+
+  .btn-trash {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+  }
+
 
   .remove-item:hover {
       background: #c82333;

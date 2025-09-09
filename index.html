@@ -54,100 +54,22 @@
     </section>
 
     <!-- Productos Section -->
-    <!--
-    <section id="productos" class="productos">
-  <div class="container">
-    <h2 class="section-title fade-in">Productos Destacados</h2>
-    <div id="productos-grid" class="productos-grid">
-    </div>
-  </div>
-  <button class="catalogo-button" onclick="window.open('docs/catalogo.pdf', '_blank')">
-    Ver catálogo completo
-  </button>
-</section>
 
-<script src="functions/productos.js"></script>
-     -->
-    <!-- Productos Section -->
     <section id="productos" class="productos">
         <div class="container">
             <h2 class="section-title fade-in">Productos Destacados</h2>
-            <div class="productos-grid"> <!--Productos 1-->
-                <!--Producto 1-->
-                <div class="producto-card fade-in" data-id="1" data-name="Camiseta Premium" data-price="45000"
-                    data-image="img/Chompa.jpeg" data-images="img/Chompa.png,img/Chompa1.png,img/Chompa2.png">
-                    <div class="producto-img"><img src="img/Chompa.png" alt=""></div>
-                    <div class="producto-info">
-                        <h3>Camiseta Premium</h3> <span>Camiseta hecha en colombia</span>
-                        <div class="tallas">
-                            <div class="talla">S</div>
-                            <div class="talla">M</div>
-                            <div class="talla seleccionada">L</div>
-                            <div class="talla disabled">XL</div>
-                        </div>
-                        <div class="producto-precio">$45.000</div> <button class="buy-button"
-                            onclick="addToCart(this)">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <!--Producto 2-->
-                <div class="producto-card fade-in" data-id="2" data-name="Jeans Modernos" data-price="89000"
-                    data-image="img/jeans.webp" data-images="img/jeans.webp,img/jeans2.webp,img/jeans3.webp">
-                    <div class="producto-img"> <img src="img/jeans.webp" alt=""></div>
-                    <div class="producto-info">
-                        <h3>Jeans Modernos</h3> <span>Jeans hechos en colombia</span>
-                        <div class="tallas">
-                            <div class="talla">S</div>
-                            <div class="talla">M</div>
-                            <div class="talla">L</div>
-                            <div class="talla disabled">XL</div>
-                        </div>
-                        <div class="producto-precio">$89.000</div> <button class="buy-button"
-                            onclick="addToCart(this)">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="producto-card fade-in" data-id="3" data-name="Chaqueta Elegante" data-price="89000"
-                    data-image="img/chaqueta.webp">
-                    <div class="producto-img"> <img src="img/chaqueta.webp" alt=""> </div>
-                    <div class="producto-info">
-                        <h3>Chaqueta Elegante</h3> <span>Chaqueta Elegante</span>
-                        <div class="tallas">
-                            <div class="talla">S</div>
-                            <div class="talla">M</div>
-                            <div class="talla">L</div>
-                            <div class="talla disabled">XL</div>
-                        </div>
-                        <div class="producto-precio">$125.000</div> <button class="buy-button"
-                            onclick="addToCart(this)">Agregar al Carrito</button>
-                    </div>
-                </div> <!--Productos 2-->
-                <div class="producto-card fade-in">
-                    <div class="producto-img"></div>
-                    <div class="producto-info">
-                        <h3>Vestido Casual</h3>
-                        <div class="producto-precio">$78.000</div> <button class="buy-button">Agregar al
-                            Carrito</button>
-                    </div>
-                </div>
-                <div class="producto-card fade-in">
-                    <div class="producto-img"></div>
-                    <div class="producto-info">
-                        <h3>Vestido Casual</h3>
-                        <div class="producto-precio">$78.000</div> <button class="buy-button">Agregar al
-                            Carrito</button>
-                    </div>
-                </div>
-                <div class="producto-card fade-in">
-                    <div class="producto-img"></div>
-                    <div class="producto-info">
-                        <h3>Vestido Casual</h3>
-                        <div class="producto-precio">$78.000</div> <button class="buy-button">Agregar al
-                            Carrito</button>
-                    </div>
-                </div>
+            <div id="productos-grid" class="productos-grid">
+                <!-- Los productos se cargarán aquí dinámicamente -->
             </div>
-        </div> <button class="catalogo-button" onclick="window.open('docs/catalogo.pdf', '_blank')"> Ver catálogo
-            completo </button>
+        </div>
+        <button class="catalogo-button" onclick="window.open('docs/catalogo.pdf', '_blank')">
+            Ver catálogo completo
+        </button>
     </section>
+
+    <script src="functions/productos.js"></script>
+
+    
 
     <!-- Modal Preview -->
     <div id="previewModal" class="preview-modal">
@@ -362,44 +284,6 @@
             observer.observe(el);
         });
 
-
-        /*
-
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const nombre = formData.get('nombre');
-            const email = formData.get('email');
-            const mensaje = formData.get('mensaje');
-
-            // Simple validation
-            if (nombre && email && mensaje) {
-                // Simulate form submission
-                const button = this.querySelector('.buy-button');
-                const originalText = button.textContent;
-
-                button.textContent = 'Enviando...';
-                button.disabled = true;
-
-                setTimeout(() => {
-                    button.textContent = '¡Mensaje Enviado! ✓';
-                    button.style.background = '#10b981';
-
-                    // Reset form
-                    this.reset();
-
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.disabled = false;
-                        button.style.background = '';
-                    }, 2000);
-                }, 1500);
-            }
-        });
-*/
         // Add to cart functionality
         document.querySelectorAll('.buy-button').forEach(button => {
             if (!button.form) { // Only for product buttons, not form submit
@@ -441,13 +325,12 @@
     <script>
         document.querySelectorAll('.talla').forEach(talla => {
             talla.addEventListener('click', function () {
-                if (this.classList.contains('disabled')) return; // Evita seleccionar tallas no disponibles
+                if (this.classList.contains('disabled')) return;
                 document.querySelectorAll('.talla').forEach(t => t.classList.remove('seleccionada'));
                 this.classList.add('seleccionada');
             });
         });
     </script>
-
 </body>
 
 </html>
