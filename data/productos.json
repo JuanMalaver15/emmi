@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Camiseta Premium",
-    "price": 45000,
+    "name": "Chompa Burda",
+    "price": 36000,
     "image": "img/Chompa.png",
-    "description": "Camiseta hecha en colombia",
+    "description": "Chompa en Burda sin cierre hombre",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"],
+    "disabled": ["-"],
     "seleccionada": "L"
   },
   {
