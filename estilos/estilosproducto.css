@@ -1,123 +1,406 @@
-
+/* Variables CSS optimizadas */
+:root {
+  --primary-red: #c70000;
+  --primary-red-dark: #a00000;
+  --primary-red-light: #ff4444;
+  --whatsapp-green: #25d366;
+  --whatsapp-green-dark: #128c7e;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-light: #9ca3af;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
 
 /* Contenedor principal */
 .producto-detalle {
-    margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1100px;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2.5rem;
+  max-width: 1200px;
   width: 100%;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ====== Imagen ====== */
 #producto-imagenes {
-  flex: 1;
-  min-width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  min-height: 400px;
 }
 
 .imagen-principal {
   width: 100%;
   max-width: 450px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  object-fit: contain;
+  transition: all 0.3s ease;
+  background: var(--white);
 }
 
 .imagen-principal:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 /* ====== Información ====== */
 #producto-info {
-  flex: 1;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
 #producto-info h2 {
-  font-size: 2rem;
-  color: #c70000;
-  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin: 0;
+  line-height: 1.2;
 }
 
 #producto-info p {
-  font-size: 1rem;
-  color: #444;
-  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 #producto-info strong {
-  color: #c70000;
+  color: var(--primary-red);
+  font-weight: 600;
 }
 
 /* ====== Selectores ====== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 label {
   font-size: 0.95rem;
   font-weight: 600;
-  margin-top: 0.5rem;
-  color: #222;
-  display: block;
+  color: var(--text-primary);
 }
 
 select, 
 input[type="number"] {
   width: 100%;
-  max-width: 200px;
-  padding: 0.6rem;
+  max-width: 220px;
+  padding: 0.75rem;
   font-size: 1rem;
-  border: 2px solid #c70000;
-  border-radius: 8px;
+  color: var(--text-primary);
+  background: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 select:focus, 
 input[type="number"]:focus {
-  border-color: #a00000;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgb(199 0 0 / 0.1);
+}
+
+select:hover,
+input[type="number"]:hover {
+  border-color: var(--primary-red-light);
 }
 
 /* ====== Botón WhatsApp ====== */
-button {
-  margin-top: 1rem;
-  padding: 0.9rem 1.2rem;
-  font-size: 1rem;
+.whatsapp-btn {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
-  background: #25d366;
+  color: var(--white);
+  background: var(--whatsapp-green) ;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(199,0,0,0.3);
+  box-shadow: var(--shadow);
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-button:hover {
-  background: #079d3e;
+.whatsapp-btn:hover {
+  background: var(--whatsapp-green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(199,0,0,0.4);
+  box-shadow: var(--shadow-lg);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+/* ====== Carrusel Mejorado ====== */
+.carrusel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.carrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: none;
+  background: var(--gray-50);
+}
+
+.carrusel img.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+.carrusel-btn:hover {
+  background: var(--primary-red);
+  color: var(--white);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.prev { 
+  left: 15px;
+}
+
+.next { 
+  right: 15px;
+}
+
+.prev::before {
+  content: '‹';
+}
+
+.next::before {
+  content: '›';
+}
+
+/* Indicadores del carrusel */
+.carrusel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  background: var(--white);
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gray-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--primary-red);
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: var(--primary-red-light);
+}
+
+/* ====== Mejoras Visuales ====== */
+.precio-destacado {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary-red);
+  margin: 1rem 0;
 }
 
 /* ====== Responsive ====== */
+@media (max-width: 1024px) {
+  .producto-detalle {
+    max-width: 95%;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .producto-detalle {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    margin-top: 80px;
+    gap: 2rem;
+  }
+
+  #producto-imagenes {
+    order: -1;
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+
+  .imagen-principal {
+    max-width: 100%;
   }
 
   #producto-info {
-    align-items: center;
+    text-align: center;
   }
 
-  select, input[type="number"] {
+  #producto-info h2 {
+    font-size: 2rem;
+  }
+
+  select, 
+  input[type="number"] {
     max-width: 100%;
   }
+
+  .whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .carrusel {
+    height: 300px;
+  }
+
+  .carrusel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .prev { 
+    left: 10px;
+  }
+
+  .next { 
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto-detalle {
+    padding: 1.5rem;
+    margin-top: 60px;
+  }
+
+  #producto-info h2 {
+    font-size: 1.75rem;
+  }
+
+  #producto-imagenes {
+    padding: 1rem;
+    min-height: 250px;
+  }
+
+  .carrusel {
+    height: 250px;
+  }
+
+  .carrusel-container {
+    margin: 20px auto;
+  }
+
+  .precio-destacado {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+}
+
+/* ====== Estados adicionales ====== */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 2px;
+}
+
+.form-group + .form-group {
+  margin-top: 1rem;
+}
+
+/* Mejora para campos de formulario */
+select option {
+  padding: 0.5rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

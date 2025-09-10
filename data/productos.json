@@ -7,7 +7,12 @@
     "description": "Chompa en Burda sin cierre hombre",
     "tallas": ["S", "M", "L", "XL"],
     "disabled": ["-"],
-    "seleccionada": "L"
+    "seleccionada": "L",
+    "imagenes": [
+      "img/Chompa.png",
+      "img/Chompa.png",
+      "img/Chompa.png"
+    ]
   },
   {
     "id": 2,
@@ -16,7 +21,12 @@
     "price": 89000,
     "image": "img/jeans.webp",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"]
+    "disabled": ["XL"],
+    "imagenes": [
+      "img/jeans.webp",
+      "img/jeans2.webp",
+      "img/jeans3.webp"
+    ]
   },
   {
     "id": 3,

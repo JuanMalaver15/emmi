@@ -34,7 +34,7 @@ async function cargarDetalleProducto() {
     <input type="number" id="cantidad" value="1" min="1">
 
     <!-- Botón WhatsApp -->
-    <button onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}')">Comprar por WhatsApp</button>
+    <button class="whatsapp-btn" onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}')">Comprar por WhatsApp</button>
   `;
 
   document.getElementById("producto-imagenes").innerHTML = imagenesHTML;
