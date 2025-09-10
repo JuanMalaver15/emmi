@@ -34,18 +34,18 @@ async function cargarDetalleProducto() {
     <input type="number" id="cantidad" value="1" min="1">
 
     <!-- Botón WhatsApp -->
-    <button onclick="comprarPorWhatsapp(${producto.id})">Comprar por WhatsApp</button>
+    <button onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}')">Comprar por WhatsApp</button>
   `;
 
   document.getElementById("producto-imagenes").innerHTML = imagenesHTML;
   document.getElementById("producto-info").innerHTML = infoHTML;
 }
 
-function comprarPorWhatsapp(id) {
+function comprarPorWhatsapp(id, nombre) {
   const talla = document.getElementById("talla").value;
   const cantidad = document.getElementById("cantidad").value;
 
-  const mensaje = `Hola, quiero comprar el producto ${id} en talla ${talla} (Cantidad: ${cantidad})`;
+  const mensaje = `Hola, quiero comprar el producto ${nombre} con id: ${id} en talla ${talla} (Cantidad: ${cantidad})`;
   const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
 
   window.open(url, "_blank");
