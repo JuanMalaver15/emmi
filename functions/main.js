@@ -1,10 +1,11 @@
 let cart = [];
 
-function addToCart(button) {
-  const productCard = button.closest('.producto-card');
+function addToCart(card, boton) {
+  const productCard = card.closest('.producto-card');
   const productData = {
     id: parseInt(productCard.dataset.id),
     name: productCard.dataset.name,
+    talla: productCard.dataset.tallas,
     price: parseInt(productCard.dataset.price),
     image: productCard.dataset.image,
   };
@@ -17,16 +18,15 @@ function addToCart(button) {
   }
 
   updateCartDisplay();
-
-  const originalText = button.textContent;
-  button.textContent = '¡Agregado! ✓';
-  button.style.background = '#10b981';
-  button.disabled = true;
+  const originalText = boton.textContent;
+  boton.textContent = '¡Agregado! ✓';
+  boton.style.background = '#10b981';
+  boton.disabled = true;
 
   setTimeout(() => {
-    button.textContent = originalText;
-    button.style.background = '';
-    button.disabled = false;
+    boton.textContent = originalText;
+    boton.style.background = '';
+    boton.disabled = false;
   }, 1500);
 }
 
@@ -40,20 +40,20 @@ function updateCartDisplay() {
   // Calcular número total de productos
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   cartBadge.textContent = cartCount;
-
-  if (cart.length === 0) {
-    cartEmpty.style.display = 'block';
-    cartFooter.style.display = 'none';
-    cartBody.innerHTML = `<p id="cartEmpty">El carrito está vacío</p>`;
-  } else {
-    cartEmpty.style.display = 'none';
-    cartFooter.style.display = 'block';
-
-    cartBody.innerHTML = cart.map(item => `
+if (cart.length === 0) {
+  cartEmpty.style.display = 'block';   // Muestra mensaje vacío
+  cartFooter.style.display = 'none';
+  cartBody.innerHTML = "<p id='cartEmpty'>El carrito está vacío</p>";             // Limpia el contenido
+} else {
+  cartFooter.style.display = 'block';
+  console.log(JSON.stringify(cart));
+  cartBody.innerHTML = cart.map(item => `
+    <div class="slider-container" style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
       <div class="cart-item">
         <img src="${item.image}" alt="${item.name}" width="50">
         <div class="cart-item-info">
           <div>${item.name}</div>
+          <div>Talla: ${item.talla}</div>
           <div>$${item.price.toLocaleString()}</div>
           <div>
             Cantidad: ${item.quantity}
@@ -62,11 +62,12 @@ function updateCartDisplay() {
         </div>
         <button class="btn-trash" onclick="removeFromCart(${item.id})">🗑️</button>
       </div>
-    `).join('');
+    </div>
+  `).join('');
 
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    totalAmount.textContent = `$${total.toLocaleString()}`;
-  }
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  totalAmount.textContent = `$${total.toLocaleString()}`;
+}
 }
 
 function increaseQuantity(productId) {

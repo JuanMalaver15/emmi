@@ -8,12 +8,13 @@ async function cargarProductos() {
 
     productos.forEach(prod => {
       // Renderizar tallas dinámicas
-      const tallasHTML = prod.tallas.map(talla => {
-        let clase = "talla";
-        if (prod.disabled.includes(talla)) clase += " disabled";
-        if (prod.seleccionada === talla) clase += " seleccionada";
-        return `<div class="${clase}">${talla}</div>`;
-      }).join("");
+const tallasHTML = prod.tallas.map(talla => {
+  let clase = "talla";
+  if (prod.disabled.includes(talla)) clase += " disabled";
+  if (prod.seleccionada === talla) clase += " seleccionada";
+  return `<div class="${clase}" data-talla="${talla}">${talla}</div>`;
+}).join("");
+
 
       // Formatear precio con separador de miles
       const precioFormateado = `$${prod.price.toLocaleString("es-CO")}`;
@@ -24,9 +25,9 @@ async function cargarProductos() {
       card.dataset.id = prod.id;
       card.dataset.name = prod.name;
       card.dataset.price = prod.price;
+      card.dataset.tallas = prod.seleccionada;
       card.dataset.image = prod.image;
       card.dataset.images = prod.images ? prod.images.join(",") : "";
-
       card.innerHTML = `
         <div class="producto-img">
           <img src="${prod.image}" alt="${prod.name}">
@@ -37,16 +38,18 @@ async function cargarProductos() {
         <div class="producto-info">
           <h3>${prod.name}</h3>
           <span>${prod.description}</span>
-          <div class="tallas">${tallasHTML}</div>
+          <div id=${prod.id} class="tallas">${tallasHTML}</div>
           <div class="producto-precio">${precioFormateado}</div>
           <div class="producto-acciones">
-            <button class="buy-button">Agregar al Carrito</button>
+            <button class="buy-button" >Agregar al Carrito</button>
           </div>
         </div>
       `;
 
       // Evento para el botón de carrito
-      card.querySelector(".buy-button").addEventListener("click", () => addToCart(card));
+      const boton = card.querySelector(".buy-button");
+      boton.textContent = "Agregar al Carrito";
+      card.querySelector(".buy-button").addEventListener("click", () => addToCart(card, boton));
 
       contenedor.appendChild(card);
     });
@@ -62,28 +65,46 @@ async function cargarProductos() {
   }
 }
 
-// Selección de tallas dinámicas
+
+
 function activarSeleccionTallas() {
-  document.querySelectorAll(".producto-card .talla").forEach(talla => {
-    talla.addEventListener("click", () => {
-      if (talla.classList.contains("disabled")) return; // No permitir clic
-      const contenedor = talla.parentElement;
+  document.querySelectorAll(".producto-card .talla").forEach(tallaEl => {
+    tallaEl.addEventListener("click", () => {
+      if (tallaEl.classList.contains("disabled")) return; 
+
+      const contenedor = tallaEl.parentElement;
+      const card = contenedor.closest(".producto-card");
+
+      // Quitar selección previa
       contenedor.querySelectorAll(".talla").forEach(t => t.classList.remove("seleccionada"));
-      talla.classList.add("seleccionada");
+      tallaEl.classList.add("seleccionada");
+
+      // Guardar talla seleccionada en dataset
+      card.dataset.tallas = tallaEl.dataset.talla;
+
+      // Opcional: guardar en productos (si quieres persistir en memoria)
+      productos.forEach(prod => {
+        if (prod.id == card.dataset.id) {
+          prod.seleccionada = tallaEl.dataset.talla;
+        }
+      });
+
+      console.log(`Producto ${card.dataset.id} -> Talla seleccionada: ${card.dataset.tallas}`);
     });
   });
 }
 
+
 // Agregar producto al carrito
-function addToCart(card) {
+function addToCart(id) {
+  const card = document.querySelector(`.producto-card[data-id="${id}"]`);
   const name = card.dataset.name;
   const price = Number(card.dataset.price).toLocaleString("es-CO");
-
-  const tallaSeleccionada = card.querySelector(".talla.seleccionada");
-  const talla = tallaSeleccionada ? tallaSeleccionada.textContent : "N/A";
+  const talla = card.dataset.tallas || "N/A";
 
   alert(`Agregado: ${name} - $${price} (Talla: ${talla})`);
 }
+
 
 // Animación fade-in al hacer scroll
 function observarAnimaciones() {
