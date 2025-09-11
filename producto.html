@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Producto</title>
-<link rel="stylesheet" href="estilos/estilosproducto.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="estilos/estilosproducto.css">
     <link rel="stylesheet" href="estilos/estilos.css">
 </head>
+
 <body>
-      <!-- Header -->
+    <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <a href="#" class="logo">EEMI®</a>
@@ -36,20 +38,21 @@
             <button class="menu-toggle">☰</button>
         </div>
     </header>
-  <div class="producto-detalle">
-    <div id="producto-imagenes"></div>
-    <div id="producto-info"></div>
-  </div>
+    <div class="producto-detalle">
+        <div id="producto-imagenes"></div>
+        <div id="producto-info"></div>
+    </div>
 
-  <script src="functions/detalle.js"></script>
+    <script src="functions/detalle.js"></script>
 
-<section class="carrusel-container">
-  <div class="carrusel" id="carrusel"></div>
-  <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-  <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-</section>
+    <h1 class="titulo">También te podría gustar</h1>
+    <section class="carrusel-container">
+        <div class="carrusel" id="carrusel"></div>
+        <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+        <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+    </section>
 
-<script src="functions/carrusel.js"></script>
+    <script src="functions/carrusel.js"></script>
 
 
 
@@ -61,7 +64,7 @@
         </div>
     </footer>
     <script>
-                // Mobile menu toggle
+        // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
 
@@ -125,4 +128,5 @@
         });
     </script>
 </body>
+
 </html>

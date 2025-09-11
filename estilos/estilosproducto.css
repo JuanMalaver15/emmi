@@ -4,7 +4,7 @@
   --primary-red-dark: #a00000;
   --primary-red-light: #ff4444;
   --whatsapp-green: #25d366;
-  --whatsapp-green-dark: #128c7e;
+  --whatsapp-green-dark: #5a805f;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --text-light: #9ca3af;
@@ -25,7 +25,7 @@
 
 /* Contenedor principal */
 .producto-detalle {
-  margin-top: 100px;
+  margin: 100px auto 0 auto; /* arriba 100px, laterales auto, abajo 0 */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -36,6 +36,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
+
 
 /* ====== Imagen ====== */
 #producto-imagenes {
@@ -85,6 +86,11 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+}
+.price {
+  font-size: 1.8rem !important;
+  color: var(--primary-red);
+  font-weight: 700;
 }
 
 #producto-info strong {
@@ -170,6 +176,13 @@ input[type="number"]:hover {
   overflow: hidden;
 }
 
+.titulo {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 20px 0;
+}
 .carrusel {
   position: relative;
   width: 100%;

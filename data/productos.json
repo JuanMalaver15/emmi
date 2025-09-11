@@ -4,14 +4,14 @@
     "name": "Chompa Burda",
     "price": 36000,
     "image": "img/Chompa.png",
-    "description": "Chompa en Burda sin cierre hombre",
+    "description": "Chompa en Burda sin cierre hombre Chompa Burda sin cierre hombre color mostaza con cuello redondo",
     "tallas": ["S", "M", "L", "XL"],
     "disabled": ["-"],
     "seleccionada": "L",
     "imagenes": [
+      "img/chompa2.png",
       "img/Chompa.png",
-      "img/jeans.webp",
-      "img/camisahombre.webp"
+      "img/chompa3.png"
     ]
   },
   {

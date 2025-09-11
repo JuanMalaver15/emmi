@@ -37,7 +37,7 @@ const tallasHTML = prod.tallas.map(talla => {
             </a>
         <div class="producto-info">
           <h3>${prod.name}</h3>
-          <span>${prod.description}</span>
+          <span class="producto-descripcion">${prod.description}</span>
           <div id=${prod.id} class="tallas">${tallasHTML}</div>
           <div class="producto-precio">${precioFormateado}</div>
           <div class="producto-acciones">

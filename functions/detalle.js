@@ -21,7 +21,7 @@ async function cargarDetalleProducto() {
   const infoHTML = `
     <h2>${producto.name}</h2>
     <p>${producto.description}</p>
-    <p><strong>Precio: </strong>$${producto.price}</p>
+    <p class="price"><strong>Precio: </strong>$${producto.price}</p>
     
     <!-- Tallas -->
     <label for="talla">Selecciona tu talla:</label>

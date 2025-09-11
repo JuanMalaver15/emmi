@@ -273,6 +273,7 @@
       opacity: 0;
       animation: fadeIn 1s forwards;
   }
+  
 
   /* animación al cargar */
   @keyframes fadeIn {
@@ -303,6 +304,16 @@
       font-weight: bold;
       margin-bottom: 1rem;
   }
+.producto-descripcion {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Número máximo de líneas que quieres mostrar */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em; /* Ajusta según tu line-height */
+  line-height: 1.5em;
+}
+
 
   .buy-button {
       width: 100%;
