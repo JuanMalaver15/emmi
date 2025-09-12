@@ -183,6 +183,14 @@ input[type="number"]:hover {
   color: #1f2937;
   margin: 20px 0;
 }
+
+@media (max-width: 1024px) {
+.titulo {
+    font-size: 1.5rem;
+  }
+}
+
+
 .carrusel {
   position: relative;
   width: 100%;

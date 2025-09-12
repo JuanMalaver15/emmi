@@ -30,8 +30,15 @@ function addToCart(card, boton) {
   }, 1500);
 }
 
+function updateCartCount(count) {
+  const desktopBadge = document.getElementById("cartBadgeDesktop");
+  if (desktopBadge) desktopBadge.textContent = count;
+
+  const mobileBadge = document.getElementById("cartBadgeMobile");
+  if (mobileBadge) mobileBadge.textContent = count;
+}
+
 function updateCartDisplay() {
-  const cartBadge = document.getElementById('cartBadge');
   const cartBody = document.getElementById('cartBody');
   const cartEmpty = document.getElementById('cartEmpty');
   const cartFooter = document.getElementById('cartFooter');
@@ -39,35 +46,36 @@ function updateCartDisplay() {
 
   // Calcular número total de productos
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartBadge.textContent = cartCount;
-if (cart.length === 0) {
-  cartEmpty.style.display = 'block';   // Muestra mensaje vacío
-  cartFooter.style.display = 'none';
-  cartBody.innerHTML = "<p id='cartEmpty'>El carrito está vacío</p>";             // Limpia el contenido
-} else {
-  cartFooter.style.display = 'block';
-  console.log(JSON.stringify(cart));
-  cartBody.innerHTML = cart.map(item => `
-    <div class="slider-container" style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
-      <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}" width="50">
-        <div class="cart-item-info">
-          <div>${item.name}</div>
-          <div>Talla: ${item.talla}</div>
-          <div>$${item.price.toLocaleString()}</div>
-          <div>
-            Cantidad: ${item.quantity}
-            <button class="btn-add" onclick="increaseQuantity(${item.id})">+</button>
-          </div>
-        </div>
-        <button class="btn-trash" onclick="removeFromCart(${item.id})">🗑️</button>
-      </div>
-    </div>
-  `).join('');
+  updateCartCount(cartCount);
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  totalAmount.textContent = `$${total.toLocaleString()}`;
-}
+  if (cart.length === 0) {
+    cartEmpty.style.display = 'block';   
+    cartFooter.style.display = 'none';
+    cartBody.innerHTML = "<p id='cartEmpty'>El carrito está vacío</p>";
+  } else {
+    cartFooter.style.display = 'block';
+    console.log(JSON.stringify(cart));
+    cartBody.innerHTML = cart.map(item => `
+      <div class="slider-container" style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" width="50">
+          <div class="cart-item-info">
+            <div>${item.name}</div>
+            <div>Talla: ${item.talla}</div>
+            <div>$${item.price.toLocaleString()}</div>
+            <div>
+              Cantidad: ${item.quantity}
+              <button class="btn-add" onclick="increaseQuantity(${item.id})">+</button>
+            </div>
+          </div>
+          <button class="btn-trash" onclick="removeFromCart(${item.id})">🗑️</button>
+        </div>
+      </div>
+    `).join('');
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    totalAmount.textContent = `$${total.toLocaleString()}`;
+  }
 }
 
 function increaseQuantity(productId) {
@@ -85,10 +93,17 @@ function removeFromCart(productId) {
 
 function openCart() {
   document.getElementById('cartModal').classList.add('active');
+  document.querySelector('.floating-cart').style.display = 'none'; 
 }
+
 function closeCart() {
   document.getElementById('cartModal').classList.remove('active');
+  // 🔵 Mostrar de nuevo SOLO en móviles
+  if (window.innerWidth <= 768) {
+    document.querySelector('.floating-cart').style.display = 'flex';
+  }
 }
+
 
 function checkout() {
   if (cart.length === 0) {

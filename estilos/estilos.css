@@ -526,6 +526,51 @@
 
   /* Carrito de compras*/
 
+  /* Botón flotante carrito */
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ee3e50d8;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 25%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 9999;
+    display: none; /* oculto por defecto */
+    transition: transform 0.2s ease;
+}
+
+.floating-cart:hover {
+    transform: scale(1.1);
+}
+.floating-cart .cart-count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    color: #ffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 0%;
+}
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+    .floating-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Ocultar carrito dentro del menú */
+    .nav-menu .cart-icon {
+        display: none !important;
+    }
+}
+
+
   /* Contenedor del carrito en el nav */
   .cart-icon {
       position: relative;
@@ -543,13 +588,14 @@
       color: white;
       font-size: 0.75rem;
       font-weight: bold;
-      border-radius: 50%;
       padding: 3px 7px;
       line-height: 1;
       min-width: 20px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease;
+      border-radius: 5px;
+
   }
 
   /* Efecto al actualizar */
