@@ -98,7 +98,7 @@ function openCart() {
 
 function closeCart() {
   document.getElementById('cartModal').classList.remove('active');
-  // 🔵 Mostrar de nuevo SOLO en móviles
+  // Mostrar de nuevo SOLO en móviles
   if (window.innerWidth <= 768) {
     document.querySelector('.floating-cart').style.display = 'flex';
   }
@@ -110,11 +110,51 @@ function checkout() {
     alert('El carrito está vacío.');
     return;
   }
-  alert('Gracias por su compra. Total: ' + document.getElementById('totalAmount').textContent);
+
+  // Construir detalles de los productos en el carrito
+  let productosTexto = cart.map(item => {
+    return `Producto: ${item.name}\nID: ${item.id}\nTalla: ${item.talla}\nCantidad: ${item.quantity}\nPrecio unitario: $${item.price.toLocaleString()}\nSubtotal: $${(item.price * item.quantity).toLocaleString()}`;
+  }).join("\n\n");
+
+  // Total de la compra
+  let total = document.getElementById('totalAmount').textContent;
+
+  // Mensaje estructurado para WhatsApp (sin emojis)
+  const mensaje = `Hola, quiero realizar una compra.
+  
+Datos del pedido:  
+${productosTexto}
+
+Total a pagar: ${total}
+
+Dirección de entrega: [Escribe tu dirección completa]  
+Nombre completo: [Tu nombre]  
+Teléfono de contacto: [Tu número]  
+
+Método de pago: Transferencia bancaria  
+- Una vez realizada la transferencia, adjuntar comprobante aquí para confirmar el pedido.  
+
+Pasos para completar la compra:  
+1) Envía este mensaje con tus datos completos.  
+2) Realiza la transferencia a la cuenta que te enviaremos.  
+3) Envía el comprobante por este chat.  
+4) Confirmaremos tu pedido y te daremos el tiempo estimado de entrega.  
+
+Gracias por tu confianza, estamos atentos a tu confirmación.`;
+
+  // URL de WhatsApp
+  const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
+
+  // Redirigir a WhatsApp
+  window.open(url, '_blank');
+
+  // Limpiar carrito
+  alert('Gracias por su compra. Total: ' + total);
   cart = [];
   updateCartDisplay();
   closeCart();
 }
+
 
 // Inicializar vista
 updateCartDisplay();
