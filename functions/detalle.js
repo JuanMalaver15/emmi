@@ -45,8 +45,31 @@ function comprarPorWhatsapp(id, nombre) {
   const talla = document.getElementById("talla").value;
   const cantidad = document.getElementById("cantidad").value;
 
-  const mensaje = `Hola, quiero comprar el producto ${nombre} con id: ${id} en talla ${talla} (Cantidad: ${cantidad})`;
-  const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
+const mensaje = `Hola, quiero realizar una compra.  
+Datos del pedido:  
+
+Producto: ${nombre}  
+ID: ${id}  
+Talla: ${talla}  
+Cantidad: ${cantidad}  
+
+Dirección de entrega: [Escribe tu dirección completa]  
+Nombre completo: [Tu nombre]  
+Teléfono de contacto: [Tu número]  
+
+Método de pago: Transferencia bancaria  
+- Una vez realizada la transferencia, adjuntar comprobante aquí para confirmar el pedido.  
+
+Pasos para completar la compra:  
+1) Envía este mensaje con tus datos completos.  
+2) Realiza la transferencia a la cuenta que te enviaremos.  
+3) Envía el comprobante por este chat.  
+4) Confirmaremos tu pedido y te daremos el tiempo estimado de entrega.  
+
+Gracias por tu confianza, estamos atentos a tu confirmación.`;
+
+const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
+
 
   window.open(url, "_blank");
 }
