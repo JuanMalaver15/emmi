@@ -34,24 +34,34 @@ async function cargarDetalleProducto() {
     <input type="number" id="cantidad" value="1" min="1">
 
     <!-- Botón WhatsApp -->
-    <button class="whatsapp-btn" onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}')">Comprar por WhatsApp</button>
+<button class="whatsapp-btn" onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}', ${producto.price})">Comprar por WhatsApp</button>
   `;
 
   document.getElementById("producto-imagenes").innerHTML = imagenesHTML;
   document.getElementById("producto-info").innerHTML = infoHTML;
 }
 
-function comprarPorWhatsapp(id, nombre) {
+function comprarPorWhatsapp(id, nombre, price) {
   const talla = document.getElementById("talla").value;
-  const cantidad = document.getElementById("cantidad").value;
+  const cantidad = parseInt(document.getElementById("cantidad").value);
 
-const mensaje = `Hola, quiero realizar una compra.  
+  // Calcular subtotal y total
+  const subtotal = price * cantidad;
+  const total = subtotal; // Como es un solo producto, el subtotal es el total
+
+  // Mensaje estructurado para WhatsApp
+  const mensaje = `Hola, quiero realizar una compra.
+  
 Datos del pedido:  
 
 Producto: ${nombre}  
 ID: ${id}  
 Talla: ${talla}  
 Cantidad: ${cantidad}  
+Precio unitario: $${price.toLocaleString()}  
+Subtotal: $${subtotal.toLocaleString()}
+
+Total a pagar: $${total.toLocaleString()}
 
 Dirección de entrega: [Escribe tu dirección completa]  
 Nombre completo: [Tu nombre]  
@@ -68,10 +78,10 @@ Pasos para completar la compra:
 
 Gracias por tu confianza, estamos atentos a tu confirmación.`;
 
-const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
-
+  const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
 
   window.open(url, "_blank");
 }
+
 
 cargarDetalleProducto();
