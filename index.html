@@ -18,26 +18,39 @@
         <div class="nav-container">
             <a href="#" class="logo">EEMI®</a>
             <nav>
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#productos" class="nav-link">Productos</a></li>
-                    <li> <a href="#" class="nav-link">Sigue tu envío</a> </li>
-                    <li><a href="#about" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="nav-link cart-icon">
-                        <div class="cart-container" onclick="openCart()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
-                                <circle cx="8" cy="21" r="1" />
-                                <circle cx="19" cy="21" r="1" />
-                                <path
-                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                            </svg>
-                            <div class="cart-count" id="cartBadgeDesktop">0</div>
-                        </div>
-                    </li>
-                </ul>
+<ul class="nav-menu">
+    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+    <li><a href="#productos" class="nav-link">Productos</a></li>
+
+    <!-- Dropdown -->
+    <li class="dropdown">
+        <a href="#" class="nav-link">Sigue tu envío ▾</a>
+        <ul class="submenu">
+            <li><a href="https://www.servientrega.com/wps/portal/Colombia/personas/inicio" target="_blank">Servientrega <svg xmlns="http://www.w3.org/2000/svg" color="#26ac5a" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></a></li>
+            <li><a href="https://interrapidisimo.com/" target="_blank">Interrapidisimo <svg xmlns="http://www.w3.org/2000/svg" color="#f87c22" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></a></li>
+            <li><a href="https://www.deprisa.com/" target="_blank">Deprisa <svg xmlns="http://www.w3.org/2000/svg" color="#ea232e" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></a></li>
+        </ul>
+    </li>
+
+    <li><a href="#about" class="nav-link">Nosotros</a></li>
+    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    <li class="nav-link cart-icon">
+        <div class="cart-container" onclick="openCart()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="#b9362d" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+            <div class="cart-count" id="cartBadgeDesktop">0</div>
+        </div>
+    </li>
+</ul>
+
+
+
             </nav>
             <button class="menu-toggle">☰</button>
         </div>
@@ -114,9 +127,11 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="tel">Numero de teléfono</label>
-                        <input type="number" id="tel" name="tel" required>
+                        <label for="tel">Número de teléfono</label>
+                        <input type="text" id="tel" name="tel" required pattern="\d{1,10}" maxlength="10"
+                            title="Solo números, máximo 10 dígitos">
                     </div>
+
                     <div class="form-group">
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
@@ -146,7 +161,8 @@
                                     d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z" />
                             </svg>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.google.com/maps?ll=6.25015,-75.570707&z=15&t=m&hl=es&gl=CO&mapclient=embed&cid=11983064837956518472"
+                            class="social-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-map-pin-house-icon lucide-map-pin-house">
