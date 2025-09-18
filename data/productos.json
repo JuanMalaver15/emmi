@@ -16,16 +16,16 @@
   },
   {
     "id": 2,
-    "name": "Jeans Modernos",
-    "description": "Jeans hechos en Colombia",
-    "price": 89000,
-    "image": "img/jeans.webp",
+    "name": "Chompa con cierre dama",
+    "description": "Chompa en burda con cierre Dama Chompa en burda con cierre Dama color mostaza con cuello redondo",
+    "price": 44000,
+    "image": "img/chompadama/chompadama.png",
     "tallas": ["S", "M", "L", "XL"],
-    "disabled": ["XL"],
+    "disabled": ["-"],
     "imagenes": [
-      "img/jeans.webp",
-      "img/jeans2.webp",
-      "img/jeans3.webp"
+      "img/chompadama/chompadama2.png",
+      "img/chompadama/chompadama3.png",
+      "img/chompadama/chompadama4.png"
     ]
   },
   {
