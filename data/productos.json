@@ -39,6 +39,8 @@
     "price": 125000,
     "image": "img/chaqueta.webp",
     "tallas": ["S", "M", "L", "XL"],
+    "color":"#312F1E",
+    "nameColor": "Marrón",
     "disabled": ["XL"]
   },
   {
