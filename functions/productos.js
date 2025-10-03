@@ -25,6 +25,8 @@ const tallasHTML = prod.tallas.map(talla => {
       card.dataset.id = prod.id;
       card.dataset.name = prod.name;
       card.dataset.price = prod.price;
+      card.dataset.color = prod.color;
+      card.dataset.nameColor = prod.nameColor;
       card.dataset.tallas = prod.seleccionada;
       card.dataset.image = prod.image;
       card.dataset.images = prod.images ? prod.images.join(",") : "";
@@ -39,6 +41,11 @@ const tallasHTML = prod.tallas.map(talla => {
           <h3>${prod.name}</h3>
           <span class="producto-descripcion">${prod.description}</span>
           <div id=${prod.id} class="tallas">${tallasHTML}</div>
+          <div class="producto-colores">
+   <span class="color-box" style="background-color:${prod.color};"></span> 
+   ${prod.nameColor}
+</div>
+
           <div class="producto-precio">${precioFormateado}</div>
           <div class="producto-acciones">
             <button class="buy-button" >Agregar al Carrito</button>
@@ -100,9 +107,11 @@ function addToCart(id) {
   const card = document.querySelector(`.producto-card[data-id="${id}"]`);
   const name = card.dataset.name;
   const price = Number(card.dataset.price).toLocaleString("es-CO");
-  const talla = card.dataset.tallas || "N/A";
+
+  
 
   alert(`Agregado: ${name} - $${price} (Talla: ${talla})`);
+
 }
 
 

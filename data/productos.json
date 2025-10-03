@@ -8,6 +8,8 @@
     "tallas": ["S", "M", "L", "XL"],
     "disabled": ["-"],
     "seleccionada": "L",
+    "color": "#29362C",
+    "nameColor": "Verde Oscuro",
     "imagenes": [
       "img/chompa2.png",
       "img/Chompa.png",
@@ -22,6 +24,8 @@
     "image": "img/chompadama/chompadama.png",
     "tallas": ["S", "M", "L", "XL"],
     "disabled": ["-"],
+    "color": "#023AA6",
+    "nameColor": "Azul",
     "imagenes": [
       "img/chompadama/chompadama2.png",
       "img/chompadama/chompadama3.png",

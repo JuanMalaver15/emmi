@@ -6,6 +6,7 @@ function addToCart(card, boton) {
     id: parseInt(productCard.dataset.id),
     name: productCard.dataset.name,
     talla: productCard.dataset.tallas,
+    nameColor: productCard.dataset.nameColor,
     price: parseInt(productCard.dataset.price),
     image: productCard.dataset.image,
   };
@@ -61,7 +62,8 @@ function updateCartDisplay() {
           <div class="cart-item-info">
             <div>${item.name}</div>
             <div>Talla: ${item.talla}</div>
-            <div>$${item.price.toLocaleString()}</div>
+            <div>Color: ${item.nameColor}</div>
+            <div>Valor: $${item.price.toLocaleString()}</div>
             <div>
               Cantidad: ${item.quantity}
               <button class="btn-add" onclick="increaseQuantity(${item.id})">+</button>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEMI - CLOTHING COMPANY</title>
     <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/gamacolores.css">
     <link rel="icon" type="image/png" href="img/logo.png">
     <!-- Librería de EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -93,6 +94,54 @@
     </section>
 
     <script src="functions/productos.js"></script>
+
+    <!-- Sección Gama de Colores -->
+<section id="colores" class="colores">
+  <div class="container">
+    <h2 class="section-title fade-in">Gama de Colores Disponibles</h2>
+    <p>Selecciona un color para ver la disponibilidad</p>
+    
+    <div class="color-wheel">
+      <!-- Colores -->
+<div class="color-box" style="--color:#e74c3c" data-color="Rojo"></div>
+<div class="color-box" style="--color:#c0392b" data-color="Vino Tinto"></div>
+<div class="color-box" style="--color:#3498db" data-color="Azul"></div>
+<div class="color-box" style="--color:#2980b9" data-color="Azul Marino"></div>
+<div class="color-box" style="--color:#2ecc71" data-color="Verde"></div>
+<div class="color-box" style="--color:#27ae60" data-color="Verde Oscuro"></div>
+<div class="color-box" style="--color:#f1c40f" data-color="Amarillo"></div>
+<div class="color-box" style="--color:#f39c12" data-color="Mostaza"></div>
+<div class="color-box" style="--color:#9b59b6" data-color="Morado"></div>
+<div class="color-box" style="--color:#8e44ad" data-color="Púrpura"></div>
+<div class="color-box" style="--color:#34495e" data-color="Gris Oscuro"></div>
+<div class="color-box" style="--color:#7f8c8d" data-color="Gris Claro"></div>
+<div class="color-box" style="--color:#d35400" data-color="Naranja"></div>
+<div class="color-box" style="--color:#e67e22" data-color="Terracota"></div>
+<div class="color-box" style="--color:#ffffff" data-color="Blanco"></div>
+<div class="color-box" style="--color:#000000" data-color="Negro"></div>
+<div class="color-box" style="--color:#a0522d" data-color="Marrón"></div>
+<div class="color-box" style="--color:#deb887" data-color="Beige"></div>
+<div class="color-box" style="--color:#ff69b4" data-color="Rosa"></div>
+<div class="color-box" style="--color:#ffd1dc" data-color="Rosa Pastel"></div>
+
+    </div>
+
+    <p class="color-selected" id="colorSelected">Haz clic en un color</p>
+  </div>
+</section>
+
+<script>
+  const colorBoxes = document.querySelectorAll('.color-box');
+  const colorSelected = document.getElementById('colorSelected');
+
+  colorBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      const colorName = box.getAttribute('data-color');
+      colorSelected.textContent = `Seleccionaste: ${colorName}`;
+      colorSelected.style.color = box.style.getPropertyValue("--color");
+    });
+  });
+</script>
 
 
     <!-- About Section -->

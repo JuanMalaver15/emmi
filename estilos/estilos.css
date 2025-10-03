@@ -273,6 +273,34 @@
       opacity: 0;
       animation: fadeIn 1s forwards;
   }
+.producto-colores {
+margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+.producto-colores .color-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px; /* un poquito más redondeado */
+  border: 2px solid #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.producto-colores .color-box:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  border-color: #999;
+}
+
+
   
 
   /* animación al cargar */
@@ -1176,11 +1204,10 @@
 .total-amount {
     font-size: 2.25rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #dc2626, #b91c1c, #991b1b);
+    background: #38393b;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
     position: relative;
 }
 

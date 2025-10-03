@@ -33,6 +33,16 @@ async function cargarDetalleProducto() {
     <label for="cantidad">Cantidad:</label>
     <input type="number" id="cantidad" value="1" min="1">
 
+    <!-- color -->
+<div class="producto-colores" style="margin: 10px 0;">
+  <span 
+    class="color-box" 
+    style="background-color:${producto.color}; display: inline-block; width: 20px; height: 20px; border: 1px solid #ccc; vertical-align: middle;" 
+    data-color="${producto.nameColor}"></span> 
+  <span style="margin-left: 8px; vertical-align: middle;">${producto.nameColor}</span>
+</div>
+
+
     <!-- Botón WhatsApp -->
 <button class="whatsapp-btn" onclick="comprarPorWhatsapp(${producto.id}, '${producto.name}', ${producto.price})">Comprar por WhatsApp</button>
   `;
@@ -45,19 +55,22 @@ function comprarPorWhatsapp(id, nombre, price) {
   const talla = document.getElementById("talla").value;
   const cantidad = parseInt(document.getElementById("cantidad").value);
 
+  // aquí la diferencia
+  const color = document.querySelector(".color-box").dataset.color; 
+
   // Calcular subtotal y total
   const subtotal = price * cantidad;
-  const total = subtotal; // Como es un solo producto, el subtotal es el total
+  const total = subtotal;
 
-  // Mensaje estructurado para WhatsApp
   const mensaje = `Hola, quiero realizar una compra.
   
 Datos del pedido:  
 
 Producto: ${nombre}  
 ID: ${id}  
-Talla: ${talla}  
-Cantidad: ${cantidad}  
+Talla: ${talla} 
+Color: ${color} 
+Cantidad: ${cantidad}
 Precio unitario: $${price.toLocaleString()}  
 Subtotal: $${subtotal.toLocaleString()}
 
@@ -79,9 +92,9 @@ Pasos para completar la compra:
 Gracias por tu confianza, estamos atentos a tu confirmación.`;
 
   const url = `https://wa.me/573202594521?text=${encodeURIComponent(mensaje)}`;
-
   window.open(url, "_blank");
 }
+
 
 
 cargarDetalleProducto();
